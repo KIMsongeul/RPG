@@ -12,7 +12,7 @@ namespace Songeul
         private float groundCheckDistance = 1.1f;
         [SerializeField]
         private LayerMask groundLayer;
-        bool isGround;
+        private bool isGround;
         
         private Rigidbody rigid;
 
@@ -42,7 +42,8 @@ namespace Songeul
             }
             isGround= Physics.Raycast
                 (transform.position, Vector3.down, groundCheckDistance, groundLayer);
-            Debug.Log(isGround);
+            //Debug.Log(isGround);
+
         }
     }
 }
