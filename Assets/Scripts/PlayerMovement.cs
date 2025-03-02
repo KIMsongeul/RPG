@@ -57,5 +57,11 @@ namespace Songeul
             Debug.Log(isGround);
 
         }
+        
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(transform.position, groundCheckDistance);
+        }
     }
 }
