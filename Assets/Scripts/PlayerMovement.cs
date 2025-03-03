@@ -13,6 +13,8 @@ namespace Songeul
         [SerializeField]
         private LayerMask groundLayer;
         private bool isGround;
+        Vector3 cameraPos;
+        private Vector3 movement;
         
         private Rigidbody rigid;
         private Animator anim;
@@ -32,17 +34,18 @@ namespace Songeul
 
         void Move()
         {
-            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            movement.x = Input.GetAxis("Horizontal");
+            movement.z = Input.GetAxis("Vertical") * cameraPos.z;
+            movement.Normalize();
             rigid.velocity = movement * speed;
-            if (movement.magnitude >= 0.1)
-            {
-                anim.SetBool("Walk", true);
-            }
-            else
-            {
-                anim.SetBool("Walk", false);
-            }
-            
+            // if (movement.magnitude >= 0.1)
+            // {
+            //     anim.SetBool("Walk", true);
+            // }
+            // else
+            // {
+            //     anim.SetBool("Walk", false);
+            // }
         }
 
         private void Update()
@@ -54,7 +57,12 @@ namespace Songeul
             }
             isGround= Physics.Raycast
                 (transform.position, Vector3.down, groundCheckDistance, groundLayer);
-            Debug.Log(isGround);
+            //Debug.Log(isGround);
+            
+            
+            cameraPos = Camera.main.transform.forward;
+            cameraPos.y = 0;
+            cameraPos.Normalize();
 
         }
         
