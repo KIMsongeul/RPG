@@ -572,8 +572,12 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6951359126514805448, guid: f5a92e08ffa0e034aa3e048254ed9e33, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951359126514805448, guid: f5a92e08ffa0e034aa3e048254ed9e33, type: 3}
       propertyPath: groundCheckDistance
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7502535061652721006, guid: f5a92e08ffa0e034aa3e048254ed9e33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -614,6 +618,14 @@ PrefabInstance:
     - target: {fileID: 7502535061652721006, guid: f5a92e08ffa0e034aa3e048254ed9e33, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677750125801865117, guid: f5a92e08ffa0e034aa3e048254ed9e33, type: 3}
+      propertyPath: m_Size.y
+      value: 2.0481138
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677750125801865117, guid: f5a92e08ffa0e034aa3e048254ed9e33, type: 3}
+      propertyPath: m_Center.y
+      value: 0.97405684
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
