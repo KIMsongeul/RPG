@@ -9,11 +9,13 @@ namespace Songeul
     public class EnemyManager : MonoBehaviour
     {
         public GameObject enemyPrefab;
+        public Transform target;
         private int i;
         private int spawnRange = 8;
         private void Start()
         {
             StartCoroutine(SpawnEnemy());
+            target = GameObject.FindWithTag("Player").transform;
         }
 
         IEnumerator SpawnEnemy()
@@ -27,6 +29,8 @@ namespace Songeul
                 HpSystem hpSystem = enemyObj.AddComponent<HpSystem>();
                 hpSystem.maxHp = 10;
                 hpSystem.attackDamage = 3;
+                EnemyAI enemyAI = enemyObj.AddComponent<EnemyAI>();
+                enemyAI.player = target;
                 i++;
                 yield return new WaitForSeconds(3.0f);
             }
