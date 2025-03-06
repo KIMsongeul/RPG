@@ -14,8 +14,8 @@ namespace Songeul
         private int spawnRange = 8;
         private void Start()
         {
-            StartCoroutine(SpawnEnemy());
             target = GameObject.FindWithTag("Player").transform;
+            StartCoroutine(SpawnEnemy());
         }
 
         IEnumerator SpawnEnemy()
