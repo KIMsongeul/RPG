@@ -8,7 +8,7 @@ namespace Songeul
     {
         
         public Transform player;
-        public float mouseSensitivity = 2f;
+        public float mouseSensitivity = 3f;
         private float cameraVerticalRotation = 0f;
 
         void Update()

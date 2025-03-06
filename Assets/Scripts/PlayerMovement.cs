@@ -35,7 +35,7 @@ namespace Songeul
         void Move()
         {
             movement.x = Input.GetAxis("Horizontal");
-            movement.z = Input.GetAxis("Vertical") * cameraPos.z;
+            movement.z = Input.GetAxis("Vertical");
             movement.Normalize();
             rigid.velocity = movement * speed;
             // if (movement.magnitude >= 0.1)
